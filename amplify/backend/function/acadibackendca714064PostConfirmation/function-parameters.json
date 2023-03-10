@@ -1,0 +1,18 @@
+{
+  "trigger": true,
+  "modules": [
+    "add-to-group"
+  ],
+  "parentResource": "acadibackendca714064",
+  "functionName": "acadibackendca714064PostConfirmation",
+  "resourceName": "acadibackendca714064PostConfirmation",
+  "parentStack": "auth",
+  "triggerEnvs": "[]",
+  "triggerDir": "/snapshot/repo/build/node_modules/@aws-amplify/amplify-category-auth/provider-utils/awscloudformation/triggers/PostConfirmation",
+  "triggerTemplate": "PostConfirmation.json.ejs",
+  "triggerEventPath": "PostConfirmation.event.json",
+  "roleName": "acadibackendca714064PostConfirmation",
+  "skipEdit": true,
+  "GROUP": "acadi-users",
+  "enableCors": false
+}

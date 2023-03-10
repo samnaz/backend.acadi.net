@@ -1,0 +1,21 @@
+{
+  "trigger": true,
+  "modules": [
+    "verification-link"
+  ],
+  "parentResource": "acadibackendca714064",
+  "functionName": "acadibackendca714064CustomMessage",
+  "resourceName": "acadibackendca714064CustomMessage",
+  "parentStack": "auth",
+  "triggerEnvs": "[\n  {\n    \"key\": \"RESOURCENAME\",\n    \"value\": \"resourceName\"\n  }\n]",
+  "triggerDir": "/snapshot/repo/build/node_modules/@aws-amplify/amplify-category-auth/provider-utils/awscloudformation/triggers/CustomMessage",
+  "triggerTemplate": "CustomMessage.json.ejs",
+  "triggerEventPath": "CustomMessage.event.json",
+  "roleName": "acadibackendca714064CustomMessage",
+  "skipEdit": true,
+  "REDIRECTURL": "https://piloto.acadi.net/dashboard",
+  "EMAILSUBJECT": "https://https://piloto.acadi.net/dashboard",
+  "EMAILMESSAGE": "Cuenta confirmada",
+  "RESOURCENAME": "resourceName",
+  "enableCors": false
+}

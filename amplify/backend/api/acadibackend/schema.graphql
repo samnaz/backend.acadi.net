@@ -1,0 +1,155 @@
+type PackCoursesJSON {
+  courseId: String
+  addedDate: String
+}
+
+type User @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  email: AWSEmail!
+  name: String!
+  lastname: String!
+  media: String
+  activities: [Activity] @hasMany
+  userCourses: [UserCourse] @hasMany
+  memberships: [Membership] @hasMany
+  biography: String
+  church: String
+  country: String
+  interests: AWSJSON
+  rol: String
+  customerStripe: String
+  cognitoId: String
+  coupons: [Coupon] @hasMany
+}
+
+type Author @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  lastname: String
+  media: String
+  email: AWSEmail!
+  avatar: String
+  courses: [Course] @hasMany
+  position: String
+}
+
+type UserCourse @model @auth(rules: [{allow: public}]) {
+  status: Int
+  user: User @belongsTo
+  course: Course @belongsTo
+}
+
+type Membership @model @auth(rules: [{allow: public}]) {
+  status: Int!
+  type: String!
+  user: User @belongsTo
+  expires_at: AWSDateTime
+  meta_stripe: String
+  packCourses: [PackCoursesJSON]
+}
+
+type Course @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  title: String!
+  description: String!
+  author: Author @belongsTo
+  category: Category @belongsTo
+  priceId: String!
+  price: Float!
+  discount: Float
+  hours: Float
+  image: String!
+  poster: String!
+  video: String!
+  vimeo_id: String!
+  rating: Float!
+  topic: String
+  subtopics: [Subtopic] @hasMany
+  lessons: [Lesson] @hasMany
+  userCourses: [UserCourse] @hasMany
+  language: String!
+  pack: Pack @belongsTo
+}
+
+type Subtopic @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  text: String!
+  course: Course @belongsTo
+}
+
+type Category @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  courses: [Course] @hasMany
+  color: String
+}
+
+type Activity @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  type: ActivityType
+  typeId: String
+  status: Boolean
+  meta: AWSJSON
+  user: User @belongsTo
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+enum ActivityType {
+  learnings
+  payment
+  subscription
+}
+
+type Lesson @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  title: String!
+  description: String!
+  content: AWSJSON
+  pdf_link: String
+  image_url: String!
+  vimeo_id: String!
+  order: Int!
+  time: String
+  course: Course @belongsTo
+  test: Test @hasOne
+}
+
+type Test @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  description: String!
+  lesson: Lesson @belongsTo
+  questions: [QUESTION]
+}
+
+type QUESTION {
+  id: Int!
+  question: String!
+  options: [OPTION]
+}
+
+type OPTION {
+  order: Int!
+  answer: String!
+  correct: Boolean!
+}
+
+type Pack @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  description: String!
+  price: Float!
+  status: Boolean!
+  courses: [Course] @hasMany
+  priceId: String!
+}
+
+type Coupon @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  code: String!
+  description: String!
+  price: Float!
+  status: Int!
+  user: User @hasOne
+}
+ 

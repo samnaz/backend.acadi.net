@@ -1,0 +1,44 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-acadibackend-staging-115410-authRole",
+      "UnauthRoleArn": "arn:aws:iam::478121357353:role/amplify-acadibackend-staging-115410-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::478121357353:role/amplify-acadibackend-staging-115410-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-acadibackend-staging-115410-deployment",
+      "UnauthRoleName": "amplify-acadibackend-staging-115410-unauthRole",
+      "StackName": "amplify-acadibackend-staging-115410",
+      "StackId": "arn:aws:cloudformation:us-east-1:478121357353:stack/amplify-acadibackend-staging-115410/1af0bd40-be71-11ed-b0a5-0a9d673499e9",
+      "AmplifyAppId": "d22vfhpn1amc5",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-acadibackend-staging-115410-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "api": {
+        "acadibackend": {}
+      },
+      "function": {
+        "acadibackendca714064CustomMessage": {
+          "REDIRECTURL": "https://piloto.acadi.net/dashboard",
+          "EMAILSUBJECT": "https://https://piloto.acadi.net/dashboard",
+          "EMAILMESSAGE": "Cuenta confirmada",
+          "deploymentBucketName": "amplify-acadibackend-staging-115410-deployment",
+          "s3Key": "amplify-builds/acadibackendca714064CustomMessage-683563787938746a5435-build.zip"
+        },
+        "acadibackendca714064PostConfirmation": {
+          "GROUP": "acadi-users",
+          "deploymentBucketName": "amplify-acadibackend-staging-115410-deployment",
+          "s3Key": "amplify-builds/acadibackendca714064PostConfirmation-564b6c3057472f7a4641-build.zip"
+        }
+      },
+      "storage": {
+        "acadibackend2c975ab8": {
+          "bucketName": "acadi-resources05222-dev",
+          "region": "us-east-1"
+        }
+      },
+      "auth": {
+        "acadibackendcc51fdc9": {}
+      }
+    }
+  }
+}
